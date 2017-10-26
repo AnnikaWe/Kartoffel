@@ -1,0 +1,26 @@
+Funktional:
+
+	1. Das System muss dem Nutzer die Möglichkeit bieten, ein- und auszufahren.
+	2. Das System muss (freie) Parkplätze verwalten.
+	3. Das System sollte fähig sein, das Einkommen des Parkhauses zu verwalten.
+	4. Das System sollte fähig sein, die Parkdauer der Autos zu speichern.
+	5. Das System sollte fähig sein, die entsprechenden Parkpreise zu berechnen.
+	6. Das System sollte Betriebsabläufe (Öffnungszeiten/ Regeln) bestimmen.
+	7. Das System sollte die Anzahl freier Parkplätze öffentlich anzeigen.
+	8. Das System muss im Notfall alle Schranken sofort öffnen.	
+
+Nicht funktional:
+
+	1. Das System muss fähig sein, nur bei ausreichen freien Plätzen neue Autos einzulassen.
+	2. Das System muss auf modernem Windows laufen.
+	3. Das System sollte die Preise korrekt berechnen.
+	4. Das System wird innerhalb der Öffnungszeiten den Zugang zu den Autos gewährleisten.
+
+Technische Anforderungen:
+
+	1. Das System sollte sich an coding conventions halten.
+	2. Das System muss einheitlich in Java programmiert sein.
+
+Rahmenbedingungen:
+
+	1. Das System muss innerhalb der Abgabefrist umgesetzt werden.

@@ -1,0 +1,25 @@
+Stakeholder
+
+Intern:
+	Team Kartoffel (aktiv)
+Extern:
+	Autofahrer (aktiv)
+	Parkhausbetreiber (aktiv)
+	Stadt (passiv)
+	Staat (passiv)
+	Gesellschaft (passiv)
+
+Nutzen:
+
+	(a)
+	Autofahrer - Übersichtlichkeit des Parkgeschehens.
+
+	(b)	
+	Parkhausbetreiber - Vereinfachung des täglichen Betriebes, Kostenersparnis.
+	
+	(c)
+	Stadt - Bessere Aufteilung der Autos auf Parkplätze/-häuser.
+	Staat - Steuereinnahmen.
+	Gesellschaft - Höhere Gesamtglückseligkeit.
+	
+Durch die Digitalisierung gehören analoge, arbeitsplatzsichernde Parkhäuser der Vergangenheit an. Keine Verletzungen und Sachbeschädigungen durch Parkplatzkämpfe.
