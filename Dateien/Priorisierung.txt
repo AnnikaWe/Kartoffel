@@ -1,0 +1,11 @@
+User Story; Mehrwert; Erfahrung; Aufwand; Risiko; Priorität
+Als Autofahrer möchte ich genau berechnete Parkkosten, um nicht zu viel Geld auszugeben.     6 9 2 3 9  
+Als Parkhausbetreiber benötige ich eine Übersicht über meine Finanzen, um immer zu wissen, wie viel Geld ich aktuell verfügbar habe.  10 8 3 4 6,67
+Als Autofahrer möchte ich sofort wissen, ob ein freier Parkplatz zur Verfügung steht, um nicht unnötig das Parkhaus abfahren zu müssen.  6 8 3 3 5,33
+Als Parkhausbetreiber möchte ich Öffnungszeiten flexibel anpassen, um geänderten Anforderungen der Parkplatzsituation gerecht zu werden. 2 10 2 2 5
+Als Parkhausbetreiber möchte ich prüfen können, ob ein Kunde schon gezahlt hat, wenn er ausfahren möche, um kein Geld zu verlieren.  10 10 5 5 4
+Als Vertreter der Stadt möchte ich eine Übersicht über freie Parkplätze, um ein attraktives Ziel für Touristen darzustellen.   3 8 3 3 2,67
+Als Autofahrer möchte ich eine klare Platzzuweisung, um keine Zeit für die Parkplatzsuche verschwenden zu müssen.   7 3 4 3 1,75
+Als Parkhausbetreiber benötige ich eine möglichst selbsterklärende Software, um sie sofort nutzen zu können.    4 4 6 2 1,33
+Als Autofahrer möchte ich leicht zu bedienende Kassenautomaten, um unnötigen Zeitaufwand zu vermeiden.    5 6 6 4 1,25
+Als Mitarbeiter des Parkhauses möchte ich wartungsfreie Software, um effizient und selbstständig damit arbeiten zu können.   4 6 5 6 0,8 
