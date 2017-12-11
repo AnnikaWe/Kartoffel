@@ -1,0 +1,3 @@
+ - Tages-, Wochen-, Monats-, Jahreseinnahmen verwalten
+ - User-Interface
+ - Datenbank (JSON?)
