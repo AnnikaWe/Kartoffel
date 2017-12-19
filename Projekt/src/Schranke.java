@@ -2,16 +2,10 @@ import java.time.*;
 
 public class Schranke {
 
-  public void newCustomer(Controller ctrl){
+  public void newCustomer(Controller ctrl) {
     LocalTime jetzt =  LocalTime.now();
     LocalTime oeffnungszeiten[] = ctrl.getOeffnungszeiten();
-    // Öfnnungszeiten eingehalten?
-    if(!(jetzt.isAfter(oeffnungszeiten[0]) && jetzt.isBefore(oeffnungszeiten[1]))){
-    	//Tag bestimmen
-    	if(jetzt.isAfter(oeffnungszeiten[1])){
-    		System.out.println("\nDas Parkhaus ist zurzeit geschlossen.\nBitte kommen Sie morgen nach " + oeffnungszeiten[0].getHour() + ":" + oeffnungszeiten[1].getMinute() + " Uhr vorbei!");
-    	}
-    	else System.out.println("\nDas Parkhaus ist zurzeit geschlossen.\nBitte kommen Sie nach " + oeffnungszeiten[0].getHour() + ":" + oeffnungszeiten[1].getMinute() + " Uhr vorbei!");
+    if(!oeffnungszeiten(jetzt, oeffnungszeiten)){
     	return;
     }
     //freien Parkplatz holen
@@ -25,9 +19,13 @@ public class Schranke {
     System.out.println("\nIhnen wurde der Parkplatz " + platzNr + " zugewiesen.\nWir wünschen Ihnen einen guten Aufenthalt!");
     
   }
-  
   public void delCustomer(Controller ctrl, int platzNr){
 	  LocalDateTime zahlZeit = ctrl.getZahlZeit(platzNr);
+	  LocalTime jetzt =  LocalTime.now();
+	  LocalTime oeffnungszeiten[] = ctrl.getOeffnungszeiten();
+	  if(!oeffnungszeiten(jetzt, oeffnungszeiten)){
+	    	return;
+	    }
 	  //noch nicht gezahlt?
 	  if(zahlZeit == null){
 		  System.out.println("Ihr Ticket wurde noch nicht bezahlt!");
@@ -41,5 +39,16 @@ public class Schranke {
 	  //Kunden aus Datenbank entfernen
 	  ctrl.delParkplatz(platzNr);
 	  System.out.println("\nAuf Wiedersehen!");
+  }
+  public boolean oeffnungszeiten(LocalTime jetzt, LocalTime[] oeffnungszeiten){
+	    if(!(jetzt.isAfter(oeffnungszeiten[0]) && jetzt.isBefore(oeffnungszeiten[1]))){
+	    	//Tag bestimmen
+	    	if(jetzt.isAfter(oeffnungszeiten[1])){
+	    		System.out.println("\nDas Parkhaus ist zurzeit geschlossen.\nBitte kommen Sie morgen nach " + oeffnungszeiten[0].getHour() + ":" + oeffnungszeiten[1].getMinute() + " Uhr vorbei!");
+	    	}
+	    	else System.out.println("\nDas Parkhaus ist zurzeit geschlossen.\nBitte kommen Sie nach " + oeffnungszeiten[0].getHour() + ":" + oeffnungszeiten[1].getMinute() + " Uhr vorbei!");
+	    	return false;
+	    }
+	    return true;
   }
 }

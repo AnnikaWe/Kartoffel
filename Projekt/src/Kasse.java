@@ -5,26 +5,33 @@ import java.util.Scanner;
 public class Kasse {
 	public void zahlen(int platzNr, Controller ctrl){
 		LocalDateTime jetzt = LocalDateTime.now();
+		if(ctrl.getZahlZeit(platzNr) != null){
+			System.out.println("\nTicket wurde bereits bezahlt!");
+			if(!ctrl.getZahlZeit(platzNr).plusMinutes(15).isAfter(LocalDateTime.now())){
+				ctrl.setAnkunftsZeit(platzNr, ctrl.getZahlZeit(platzNr));
+			}
+			else return;
+		}
 		double preis = 0f;
 		double eingezahlt = 0;
 		double[] kosten = ctrl.getPreise();
 		//Parkdauer errechnen
 		int timeD = (int)ctrl.getAnkunftsZeit(platzNr).until(jetzt, ChronoUnit.DAYS);
 		int timeH = (int)ctrl.getAnkunftsZeit(platzNr).until(jetzt, ChronoUnit.HOURS);
-		int timeM = (int)ctrl.getAnkunftsZeit(platzNr).until(jetzt, ChronoUnit.MINUTES) + 1;
+		int timeM = (int)ctrl.getAnkunftsZeit(platzNr).until(jetzt, ChronoUnit.MINUTES)-(60*timeH) + 1;
 		//nur eine Stunde geparkt
 		if(timeH + 1 == 1){
 			preis = kosten[0];
 		}
 		//Kosten von 20€ überschritten
-		else if(timeH * kosten [1] >= 20){
+		else if(kosten[0] + (timeH * kosten [1]) >= kosten[2]){
 			preis = kosten[2];
 		}
 		//"normale" Parkpreisberechnung
-		else preis = kosten[1] * timeH;
+		else preis = kosten[1] * timeH + kosten[0];
 		//länger als 1 Tag?
 		if(timeD > 0){
-			System.out.println("\nIhre Parkzeit beträgt: " + timeD + " Tage, " + timeH + " Stunden und " + timeM + " Minuten.");
+			System.out.println("\nIhre Parkzeit beträgt: " + timeD + " Tage, " + (timeH-(24*timeD)) + " Stunden und " + timeM + " Minuten.");
 		}
 		else System.out.println("\nIhre Parkzeit beträgt: " + timeH + " Stunden und " + timeM + " Minuten.");
 		
